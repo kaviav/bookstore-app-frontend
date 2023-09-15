@@ -19,7 +19,7 @@ const BookDetail = () => {
   useEffect(() => {
     const fetchHandler = async () => {
       await axios
-        .get(`http://localhost:5000/books/getone/${id}`)
+        .get(`https://bookstore-app-u7mu.onrender.com/books/getone/${id}`)
         .then((res) => res.data)
         .then((data) => setInputs(data.book));
     };
@@ -28,7 +28,7 @@ const BookDetail = () => {
 
   const sendRequest = async () => {
     await axios
-      .put(`http://localhost:5000/books/update/${id}`, {
+      .put(`https://bookstore-app-u7mu.onrender.com/books/update/${id}`, {
         name: String(inputs.name),
         author: String(inputs.author),
         description: String(inputs.description),

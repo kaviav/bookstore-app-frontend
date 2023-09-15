@@ -5,12 +5,12 @@ import "./Book.css";
 const Book = (data) => {
   const navigate = useNavigate();
   const { _id, name, author, description, price, image } = data.book;
-
+  console.log(_id);
   // console.log(data.book);
   // console.log(data.book.price);
   const deleteHandler = async () => {
     await axios
-      .delete(`http://localhost:5000/books/delete/${_id}`)
+      .delete(`https://bookstore-app-u7mu.onrender.com/books/delete/${_id}`)
       .then((res) => res.data)
       .then(() => navigate("/"))
       .then(() => navigate("/books"));
